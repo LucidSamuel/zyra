@@ -21,14 +21,28 @@ import { Textarea } from "../ui/textarea";
 
 const suggestedActions = [
   {
-    title: "Help me book a flight",
-    label: "from San Francisco to London",
-    action: "Help me book a flight from San Francisco to London",
+    title: "Analyze ETH Tokenomics",
+    label: "Staking and supply dynamics",
+    action:
+      "Analyze Ethereum's tokenomics focusing on staking metrics and supply dynamics",
   },
   {
-    title: "What is the status",
-    label: "of flight BA142 flying tmrw?",
-    action: "What is the status of flight BA142 flying tmrw?",
+    title: "Compare L2 Solutions",
+    label: "Arbitrum vs Optimism analysis",
+    action:
+      "Compare Layer 2 scaling solutions: Arbitrum vs Optimism, focusing on TVL, transactions, and fees",
+  },
+  {
+    title: "DeFi Market Analysis",
+    label: "Lending protocols and TVL trends",
+    action:
+      "What are the key trends in DeFi lending protocols? Focus on TVL, yields, and market share",
+  },
+  {
+    title: "Bitcoin Halving Impact",
+    label: "Market dynamics and mining",
+    action:
+      "Explain the impact of upcoming Bitcoin halving on market dynamics and mining economics",
   },
 ];
 
@@ -52,13 +66,13 @@ export function MultimodalInput({
   messages: Array<Message>;
   append: (
     message: Message | CreateMessage,
-    chatRequestOptions?: ChatRequestOptions,
+    chatRequestOptions?: ChatRequestOptions
   ) => Promise<string | null | undefined>;
   handleSubmit: (
     event?: {
       preventDefault?: () => void;
     },
-    chatRequestOptions?: ChatRequestOptions,
+    chatRequestOptions?: ChatRequestOptions
   ) => void;
 }) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -73,7 +87,9 @@ export function MultimodalInput({
   const adjustHeight = () => {
     if (textareaRef.current) {
       textareaRef.current.style.height = "auto";
-      textareaRef.current.style.height = `${textareaRef.current.scrollHeight + 0}px`;
+      textareaRef.current.style.height = `${
+        textareaRef.current.scrollHeight + 0
+      }px`;
     }
   };
 
@@ -135,7 +151,7 @@ export function MultimodalInput({
         const uploadPromises = files.map((file) => uploadFile(file));
         const uploadedAttachments = await Promise.all(uploadPromises);
         const successfullyUploadedAttachments = uploadedAttachments.filter(
-          (attachment) => attachment !== undefined,
+          (attachment) => attachment !== undefined
         );
 
         setAttachments((currentAttachments) => [
@@ -148,7 +164,7 @@ export function MultimodalInput({
         setUploadQueue([]);
       }
     },
-    [setAttachments],
+    [setAttachments]
   );
 
   return (
