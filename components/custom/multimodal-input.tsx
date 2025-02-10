@@ -22,7 +22,7 @@ import { Textarea } from "../ui/textarea";
 const suggestedActions = [
   {
     title: "Analyze ETH Tokenomics",
-    label: "Staking and supply dynamics",
+    label: "staking metrics and supply dynamics",
     action:
       "Analyze Ethereum's tokenomics focusing on staking metrics and supply dynamics",
   },

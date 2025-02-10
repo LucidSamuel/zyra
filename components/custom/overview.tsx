@@ -21,8 +21,14 @@ export const Overview = () => {
         </p>
         <p>
           Welcome to the Crypto Research Assistant. Ask me about blockchain
-          protocols, market analysis, token metrics, and industry trends. 
+          protocols, market analysis, token metrics, and industry trends.
         </p>
+        <ul className="list-disc pl-4 space-y-2">
+          <li>"Analyze ETH's tokenomics and staking metrics"</li>
+          <li>"Compare Layer 2 scaling solutions: Arbitrum vs Optimism"</li>
+          <li>"What are the key trends in DeFi lending protocols?"</li>
+          <li>"Explain the impact of Bitcoin halving on market dynamics"</li>
+        </ul>
         <p>Get started with your crypto research question!</p>
       </div>
     </motion.div>
